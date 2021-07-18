@@ -1,11 +1,10 @@
 import { API } from './api.js';
 
 const User = {
-  createUser: async username =>
-    await API(`/api/users`, 'POST', { name: username }),
-  getUser: async userId => await API(`/api/users/${userId}`),
-  getUserList: async () => await API(`/api/users`),
-  deleteUser: async userId => await API(`/api/users/${userId}`, 'DELETE'),
+  createUser: username => API.post(`/api/users`, { name: username }),
+  getUser: userId => API.get(`/api/users/${userId}`),
+  getUserList: () => API.get(`/api/users`),
+  deleteUser: userId => API.delete(`/api/users/${userId}`),
 };
 
 export { User };
