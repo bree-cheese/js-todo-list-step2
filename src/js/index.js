@@ -1,4 +1,4 @@
-import { User } from '../api/user.js';
+import UserApi from '../api/user.js';
 
 async function App() {
   const onUserCreateHandler = () => {
@@ -7,7 +7,7 @@ async function App() {
 
   const userCreateButton = document.querySelector('.user-create-button');
   userCreateButton.addEventListener('click', onUserCreateHandler);
-  let data = await User.getUserList();
+  let data = await UserApi.getUserList();
   console.log(data);
 }
 
